@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serious Game</title>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+    <form id="questionnaireForm">
+        <label for="role">Quel est votre rôle ?</label>
+        <select id="role" name="role">
+            <option value="saboteur">Saboteur</option>
+            <option value="collaborateur">Collaborateur</option>
+            <option value="manager">Manager</option>
+        </select>
+        <br><br>
+        <label for="softskills">Choisissez vos soft skills :</label>
+        <select id="softskills" name="softskills" multiple>
+            <option value="empathique">Empathique</option>
+            <option value="communicateur">Communicateur</option>
+            <option value="feedback">Feedback</option>
+            <option value="brainstormer">Brainstormer</option>
+            <option value="teamSpirit">Team Spirit</option>
+            <option value="proactive">Proactive</option>
+            <option value="commonVision">Common Vision</option>
+            <option value="motivator">Motivator</option>
+            <option value="audacieux">Audacieux</option>
+            <option value="negociateur">Négociateur</option>
+            <option value="creatif">Créatif</option>
+            <option value="pragmatic">Pragmatic</option>
+            <option value="flexible">Flexible</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <script>
+        document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const role = document.getElementById("role").value;
+            const softskills = Array.from(document.getElementById("softskills").selectedOptions).map(option => option.value);
+            alert(`Rôle : ${role}\nSoft Skills : ${softskills.join(", ")}`);
+        });
+    </script>
+</body>
+</html>
