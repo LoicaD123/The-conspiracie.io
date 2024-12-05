@@ -44,11 +44,24 @@
       <br /><br />
       <label for="identifySaboteur">Who is the saboteur ?</label>
       <input type="text" id="identifySaboteur" name="identifySaboteur" />
+      <button type="button" id="deployButton">Déployer</button>
       <br /><br />
-      <input type="submit" value="Envoyer"
+      <input type="submit" value="Envoyer" />
     </form>
 
     <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const rolefield = document.getElementById("role");
+        rolefield.value = "Leader";
+      });
+
+      document
+        .getElementById("deployButton")
+        .addEventListener("click", function () {
+          const identifySaboteurField =
+            document.getElementById("identifySaboteur");
+          identifySaboteurField.Value = "Saboteur Name";
+        });
       document
         .getElementById("questionnaireForm")
         .addEventListener("submit", function (event) {
@@ -60,7 +73,7 @@
           const foundSaboteur = document.getElementById("foundSaboteur").value;
           const saboteurs = document.getElementById("saboteurs").value;
           const identifySaboteur =
-            document.getelemtById("identifySaboteur").value;
+            document.getelementById("identifySaboteur").value;
           alert(
             `Rôle : ${role}\nSoft Skills : ${softskills.join(
               ", "
