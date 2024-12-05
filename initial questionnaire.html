@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire Initial</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Questionnaire Initial</h1>
+    <form id="initialForm">
+      <label for="initialRole">Quel est votre rôle ?</label>
+      <select id="initialRole" name="initialRole">
+        <option value="saboteur">Saboteur</option>
+        <option value="collaborateur">Collaborateur</option>
+        <option value="manager">Manager</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="Commencer le jeu" />
+    </form>
+
+    <script>
+      document
+        .getElementById("initialForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const initialRole = document.getElementById("initialRole").value;
+          localStorage.setItem("role", initialRole);
+          alert("Votre rôle a été enregistré. Vous pouvez commencer le jeu.");
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>
