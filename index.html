@@ -32,6 +32,10 @@
             <option value="pragmatic">Pragmatic</option>
             <option value="flexible">Flexible</option>
         </select>
+        <label for="foundSaboteur">Avez-vous trouvé le/les saboteur(s) ?</label>
+        <select id="foundSaboteur" name="foundSaboteur">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
         <br><br>
         <input type="submit" value="Envoyer">
     </form>
@@ -40,9 +44,11 @@
         document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const role = document.getElementById("role").value;
-            const softskills = Array.from(document.getElementById("softskills").selectedOptions).map(option => option.value);
-            alert(`Rôle : ${role}\nSoft Skills : ${softskills.join(", ")}`);
-        });
+            const softskills =;
+        });Array.from(document.getElementById("softskills").selectedOptions).map(option => option.value);
+            const foundSaboteur = document.getElementById("foundSaboteur").value;
+            const saboteurs = document.getElementById("saboteurs").value;
+            alert(`Rôle : ${role}\nSoft Skills : ${softskills.join(", ")}\nAvez-vous trouvé le/les saboteur(s) ? : ${foundSaboteur}\nQui est/sont le(s) saboteur(s) d'après vous ? : ${saboteurs}`);
     </script>
 </body>
 </html>
