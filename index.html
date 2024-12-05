@@ -36,8 +36,15 @@
         <select id="foundSaboteur" name="foundSaboteur">
             <option value="oui">Oui</option>
             <option value="non">Non</option>
+        </select>
         <br><br>
-        <input type="submit" value="Envoyer">
+        <label for="saboteurs">Qui est/sont le(s) saboteur(s) d'apres vous ?</label>
+        <input type="text" id="Saboteurs" name="Saboteurs">
+        <br><br>
+        <label for="identifySaboteur">Qui est le saboteur ?</label>
+        <input type="text" id="identifySaboteur" name="identifySaboteur">
+        <br><br>
+        <input type="submit" value="Envoyer"
     </form>
 
     <script>
@@ -48,7 +55,8 @@
         });Array.from(document.getElementById("softskills").selectedOptions).map(option => option.value);
             const foundSaboteur = document.getElementById("foundSaboteur").value;
             const saboteurs = document.getElementById("saboteurs").value;
-            alert(`Rôle : ${role}\nSoft Skills : ${softskills.join(", ")}\nAvez-vous trouvé le/les saboteur(s) ? : ${foundSaboteur}\nQui est/sont le(s) saboteur(s) d'après vous ? : ${saboteurs}`);
+            alert(`Rôle : ${role}\nSoft Skills : ${softskills.join(", ")}\nAvez-vous trouvé le/les saboteur(s) ? : ${foundSaboteur}\nQui est/sont le(s) saboteur(s) d'après vous ? : ${saboteurs}\nQui est le saboteur ? : ${identitySaboteur}`);
+        });
     </script>
 </body>
 </html>
