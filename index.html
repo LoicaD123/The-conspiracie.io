@@ -10,11 +10,11 @@
   <body>
     <h1>Questionnaire</h1>
 
-    <form id="questionnaireForm">
+    <form action="submit" id="questionnaireForm">
       <label for="role">What is your role ?</label>
       <input type="text" id="role" name="role" readonly />
       <br /><br />
-      <label for="softskills">Choisissez vos soft skills :</label>
+      <label for="softskills">choose your softskills :</label>
       <select id="softskills" name="softskills" multiple>
         <option value="empathique">Empathique</option>
         <option value="communicateur">Communicateur</option>
@@ -33,8 +33,8 @@
       <br /><br />
       <label for="foundSaboteur">Have you found the saboteur(s) ?</label>
       <select id="foundSaboteur" name="foundSaboteur">
-        <option value="oui">Oui</option>
-        <option value="non">Non</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
       </select>
       <br /><br />
       <label for="saboteurs"
@@ -59,6 +59,8 @@
           ).map((option) => option.value);
           const foundSaboteur = document.getElementById("foundSaboteur").value;
           const saboteurs = document.getElementById("saboteurs").value;
+          const identifySaboteur =
+            document.getelemtById("identifySaboteur").value;
           alert(
             `Rôle : ${role}\nSoft Skills : ${softskills.join(
               ", "
