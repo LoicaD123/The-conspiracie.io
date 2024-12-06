@@ -3,82 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serious Game</title>
+    <title>Questionnaire Initial</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <!-- test -->
   <body>
-    <h1>Questionnaire</h1>
-
-    <form action="submit" id="questionnaireForm">
-      <label for="role">What is your role ?</label>
-      <input type="text" id="role" name="role" readonly />
-      <br /><br />
-      <label for="softskills">choose your softskills :</label>
-      <select id="softskills" name="softskills" multiple>
-        <option value="empathique">Empathique</option>
-        <option value="communicateur">Communicateur</option>
-        <option value="feedback">Feedback</option>
-        <option value="brainstormer">Brainstormer</option>
-        <option value="teamSpirit">Team Spirit</option>
-        <option value="proactive">Proactive</option>
-        <option value="commonVision">Common Vision</option>
-        <option value="motivator">Motivator</option>
-        <option value="audacieux">Audacieux</option>
-        <option value="negociateur">Négociateur</option>
-        <option value="creatif">Créatif</option>
-        <option value="pragmatic">Pragmatic</option>
-        <option value="flexible">Flexible</option>
+    <h1>Questionnaire Initial</h1>
+    <a href="index.html">Lien</a>
+    <form id="initialForm">
+      <label for="initialRole">Quel est votre rôle ?</label>
+      <select id="initialRole" name="initialRole">
+        <option value="saboteur">Saboteur</option>
+        <option value="collaborateur">Collaborateur</option>
+        <option value="manager">Manager</option>
       </select>
       <br /><br />
-      <label for="foundSaboteur">Have you found the saboteur(s) ?</label>
-      <select id="foundSaboteur" name="foundSaboteur">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-      <br /><br />
-      <label for="saboteurs"
-        >Who is/are the saboteur(s) according to you ?</label
-      >
-      <input type="text" id="Saboteurs" name="Saboteurs" />
-      <br /><br />
-      <label for="identifySaboteur">Who is the saboteur ?</label>
-      <input type="text" id="identifySaboteur" name="identifySaboteur" />
-      <button type="button" id="deployButton">Déployer</button>
-      <br /><br />
-      <input type="submit" value="Envoyer" />
+      <input type="submit" value="Commencer le jeu" />
     </form>
 
     <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        const rolefield = document.getElementById("role");
-        rolefield.value = "Leader";
-      });
-
       document
-        .getElementById("deployButton")
-        .addEventListener("click", function () {
-          const identifySaboteurField =
-            document.getElementById("identifySaboteur");
-          identifySaboteurField.Value = "Saboteur Name";
-        });
-      document
-        .getElementById("questionnaireForm")
+        .getElementById("initialForm")
         .addEventListener("submit", function (event) {
           event.preventDefault();
-          const role = document.getElementById("role").value;
-          const softskills = Array.from(
-            document.getElementById("softskills").selectedOptions
-          ).map((option) => option.value);
-          const foundSaboteur = document.getElementById("foundSaboteur").value;
-          const saboteurs = document.getElementById("saboteurs").value;
-          const identifySaboteur =
-            document.getelementById("identifySaboteur").value;
-          alert(
-            `Rôle : ${role}\nSoft Skills : ${softskills.join(
-              ", "
-            )}\nHave you found le/les saboteur(s) ? : ${foundSaboteur}\nWho is/are the saboteur(s) according to you ? : ${saboteurs}\nWho is the saboteur ? : ${identitySaboteur}`
-          );
+          const initialRole = document.getElementById("initialRole").value;
+          localStorage.setItem("role", initialRole);
+          alert("Votre rôle a été enregistré. Vous pouvez commencer le jeu.");
+          window.location.href = "index.html";
         });
     </script>
   </body>
