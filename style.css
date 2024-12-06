@@ -76,7 +76,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #2980b9;
+  background-color: #207bb9;
   transform: translateY(-2px);
 }
 

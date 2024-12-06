@@ -17,7 +17,7 @@
         <option value="manager">Manager</option>
       </select>
       <br /><br />
-      <input type="submit" value="Commencer le jeu" />
+      <input type="submit" value="Start the game" />
     </form>
 
     <script>
@@ -27,8 +27,8 @@
           event.preventDefault();
           const initialRole = document.getElementById("initialRole").value;
           localStorage.setItem("role", initialRole);
-          alert("Votre rôle a été enregistré. Vous pouvez commencer le jeu.");
-          window.location.href = "index.html";
+          alert("Your role has been saved. You can now start the game.");
+          window.location.href = "initial_questionnaire";
         });
     </script>
   </body>
